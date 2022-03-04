@@ -29,7 +29,6 @@ group :development do
 end
 
 group :production do
-  gem 'heroku-stage'
   gem 'rack-timeout'
 end
 
@@ -62,5 +61,6 @@ group :development, :test do
 end
 
 group :production, :development, :test do
+  gem 'heroku-stage'
   gem 'tzinfo-data'
 end
