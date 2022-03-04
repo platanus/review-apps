@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   mount Sidekiq::Web => '/queue'
+  resources :posts
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   namespace :api, defaults: { format: :json } do
