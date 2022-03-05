@@ -47,8 +47,6 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'dotenv-rails'
-  gem 'factory_bot_rails'
-  gem 'faker'
   gem 'guard-rspec', require: false
   gem 'pry-byebug'
   gem 'pry-rails'
@@ -62,6 +60,8 @@ group :development, :test do
 end
 
 group :production, :development, :test do
+  gem 'factory_bot_rails'
+  gem 'faker'
   gem 'tzinfo-data'
 end
 gem 'aws-sdk-rails'
