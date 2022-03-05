@@ -36,5 +36,11 @@ module FakeDataLoader
     pass = "password"
     admin = AdminUser.find_by(email: email)
     AdminUser.create!(email: email, password: pass, password_confirmation: pass) unless admin
+    Post.create!(
+      [
+        { title: 'Hello', body: 'These is a review app auto generated post' },
+        { title: 'Hello Review App', body: '-' }
+      ]
+    )
   end
 end
