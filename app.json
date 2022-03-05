@@ -13,13 +13,14 @@
         }
       },
       "env": {
-        "HEROKU_PARENT_APP_NAME": "pl-review-apps"
+        "HEROKU_PARENT_APP_NAME": "pl-review-apps",
+        "APPLICATION_HOST": "${HEROKU_APP_NAME}-pr-${HEROKU_PR_NUMBER}.herokuapp.com"
       },
       "buildpacks": [
         { "url": "https://github.com/heroku/heroku-buildpack-multi.git" }
       ],
       "scripts": {
-        "postdeploy": "bin/rails db:fake_data:load"
+        "postdeploy": "echo $APPLICATION_HOST; bin/rails db:fake_data:load"
       }
     }
   }
