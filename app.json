@@ -11,6 +11,9 @@
           "size": "free"
         }
       },
+      "env": {
+        "HEROKU_PARENT_APP_NAME": "pl-review-apps"
+      },
       "buildpacks": [
         { "url": "https://github.com/heroku/heroku-buildpack-multi.git" }
       ]
