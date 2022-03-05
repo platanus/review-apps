@@ -10,7 +10,10 @@
           "quantity": 1,
           "size": "hobby"
         }
-      }
+      },
+      "buildpacks": [
+        { "url": "https://github.com/heroku/heroku-buildpack-multi.git" }
+      ]
     }
   }
 }
