@@ -8,7 +8,7 @@ namespace :db do
     task load: :environment do
       require 'fake_data_loader.rb'
 
-      if Rails.env.production?
+      if Rails.env.production? && !Heroku.review_app?
         puts "You can't run this task on production environment"
         return
       end

@@ -1,0 +1,26 @@
+{
+  "environments": {
+    "review": {
+      "addons": ["heroku-postgresql:hobby-dev", "heroku-redis:hobby-dev"],
+      "formation": {
+        "web": {
+          "quantity": 1,
+          "size": "hobby"
+        },
+        "worker": {
+          "quantity": 1,
+          "size": "hobby"
+        }
+      },
+      "env": {
+        "HEROKU_PARENT_APP_NAME": "pl-review-apps"
+      },
+      "buildpacks": [
+        { "url": "https://github.com/heroku/heroku-buildpack-multi.git" }
+      ],
+      "scripts": {
+        "postdeploy": "bin/rails db:fake_data:load"
+      }
+    }
+  }
+}
